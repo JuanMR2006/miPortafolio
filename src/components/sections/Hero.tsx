@@ -9,64 +9,57 @@ export default function Hero() {
   const t = useTranslations('hero');
 
   return (
-    <section id="inicio" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-32 md:pt-40">
+    <section id="inicio" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-32 md:pt-40 pb-20">
       <div className="max-w-7xl mx-auto w-full">
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           
           {/* LEFT - Image */}
-<motion.div
-  initial={{ opacity: 0, x: -50 }}
-  animate={{ opacity: 1, x: 0 }}
-  transition={{ duration: 0.8, delay: 0.2 }}
-  className="flex justify-center lg:justify-start order-2 lg:order-1"
->
-  <div className="relative w-80 h-[450px] sm:w-96 sm:h-[520px] md:w-[450px] md:h-[580px]">
-    
-    {/* Decorative blobs */}
-    <div className="absolute -top-6 -left-6 w-40 h-40 bg-blue-500 rounded-full blur-3xl opacity-30 animate-pulse"></div>
-    <div className="absolute -bottom-6 -right-6 w-40 h-40 bg-purple-500 rounded-full blur-3xl opacity-30 animate-pulse" style={{ animationDelay: '1s' }}></div>
-    <div className="absolute top-1/2 -right-8 w-32 h-32 bg-indigo-500 rounded-full blur-2xl opacity-20 animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-    
-    {/* Main container with crazy shape */}
-    <div className="relative w-full h-full">
-      {/* Background shapes */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 rounded-[60px] rotate-3 scale-105"></div>
-      <div className="absolute inset-0 bg-gradient-to-tl from-blue-500 via-purple-500 to-indigo-500 rounded-[50px] -rotate-2 scale-95 blur-sm opacity-70"></div>
-      
-      {/* Image container with custom shape */}
-      <div className="relative w-full h-full rounded-[45px] overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-purple-400/20 z-10"></div>
-        <Image
-          src="/cuerpocompleto.jpeg"
-          alt="Juan José Montezuma Rosero"
-          fill
-          className="object-cover"
-          priority
-        />
-        
-        {/* Overlay border effect */}
-        <div className="absolute inset-0 border-4 border-white/30 rounded-[45px] z-20"></div>
-      </div>
-      
-      {/* Floating badge */}
-      <motion.div
-        animate={{ 
-          y: [0, -10, 0],
-          rotate: [0, 5, 0, -5, 0]
-        }}
-        transition={{ 
-          duration: 4,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-        className="absolute -bottom-4 -right-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-2xl shadow-xl z-30 font-bold text-sm"
-      >
-      </motion.div>
-    </div>
-    
-  </div>
-</motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="flex justify-center lg:justify-start order-2 lg:order-1"
+          >
+            <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-[420px] md:h-[420px]">
+              {/* Glow effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-500 rounded-3xl blur-2xl opacity-40 animate-pulse"></div>
+              
+              {/* Background shapes */}
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 rounded-[60px] rotate-3 scale-105"></div>
+              <div className="absolute inset-0 bg-gradient-to-tl from-blue-500 via-purple-500 to-indigo-500 rounded-[50px] -rotate-2 scale-95 blur-sm opacity-70"></div>
+              
+              {/* Image container with custom shape */}
+              <div className="relative w-full h-full rounded-[45px] overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-purple-400/20 z-10"></div>
+                <Image
+                  src="/cuerpocompleto.jpeg"
+                  alt="Juan José Montezuma Rosero"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+                
+                {/* Overlay border effect */}
+                <div className="absolute inset-0 border-4 border-white/30 rounded-[45px] z-20"></div>
+              </div>
+              
+              {/* Floating badge */}
+              <motion.div
+                animate={{ 
+                  y: [0, -10, 0],
+                  rotate: [0, 5, 0, -5, 0]
+                }}
+                transition={{ 
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                className="absolute -bottom-4 -right-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3 rounded-2xl shadow-xl z-30 font-bold text-sm"
+              >
+              </motion.div>
+            </div>
+          </motion.div>
 
           {/* RIGHT - Info */}
           <div className="text-center lg:text-left order-1 lg:order-2">

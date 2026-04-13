@@ -14,5 +14,10 @@
     "description": "Soy estudiante de 5to semestre en la Universidad Cooperativa de Colombia. Me apasiona construir sistemas funcionales y resolver problemas con código. Siempre estoy aprendiendo, investigando y mejorando mis habilidades para crear soluciones que realmente funcionen.",
     "downloadCV": "Descargar CV",
     "contact": "Contacto"
+  },
+  "about": {
+  "title": "Sobre mí",
+  "profile": "PERFIL",
+  "profileText": "Juan José Montezuma Rosero, estudiante de quinto semestre de Ingeniería de Software con interés en el desarrollo backend y la construcción de sistemas funcionales"
   }
 }

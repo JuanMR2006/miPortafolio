@@ -17,7 +17,14 @@
   },
   "about": {
   "title": "About me",
-  "profile": "PROFILE",
-  "profileText": "Juan José Montezuma Rosero, fifth semester Software Engineering student interested in backend development and building functional systems"
+  "intro": "I'm driven by building things that work. When I write code, I look for it to be clean, efficient and actually solve problems. Currently in my fifth semester of Software Engineering, each project is an opportunity to learn something new and improve my backend development skills.",
+  "goals": "What I want to do",
+  "goalsText": "My goal is to specialize in backend development, building robust and scalable systems. I'm interested in working with technologies like Java and Spring Boot, as well as exploring microservices architectures and databases. I seek opportunities where I can grow professionally while contributing value with clean and efficient code.",
+  "development": "Development & Interests",
+  "developmentText": "Currently focused on backend with Java, I'm also interested in cybersecurity and database management. I like to understand how things work under the hood and apply best practices in each project.",
+  "gaming": "Video Games",
+  "gamingText": "In my free time I enjoy playing competitive and casual video games. I also play soccer and train 3 times a week at university.",
+  "music": "Music",
+  "musicText": "I listen to all kinds of music. I have very varied tastes ranging from rock in Spanish through Rap/Hip-Hop to reggaeton."
   }
 }

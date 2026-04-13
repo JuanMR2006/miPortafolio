@@ -31,6 +31,10 @@
   "title": "Skills"
   },
   "projects": {
-  "title": "My Projects"
+  "title": "My Projects",
+  "project1": {
+    "title": "Workshop and Seminar Management",
+    "description": "Platform to manage workshops and academic events with different user roles. Includes registration, quota control, validations and automatic PDF certificate generation. I developed the backend logic with Java and Spring Boot."
   }
+}
 }

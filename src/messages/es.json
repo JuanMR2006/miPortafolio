@@ -31,6 +31,10 @@
   "title": "Habilidades"
   },
   "projects": {
-  "title": "Mis Proyectos"
+  "title": "Mis Proyectos",
+  "project1": {
+    "title": "Gestión de Talleres y Seminarios",
+    "description": "Plataforma para gestionar talleres y eventos académicos con diferentes roles de usuario. Incluye registro, control de cupos, validaciones y generación automática de certificados PDF. Desarrollé la lógica backend con Java y Spring Boot."
   }
+}
 }

@@ -26,5 +26,8 @@
   "gamingText": "En mi tiempo libre disfruto jugando videojuegos competitivos y casuales. También juego fútbol y entreno 3 veces por semana en la universidad.",
   "music": "Música",
   "musicText": "Escucho música de todo tipo. Tengo gustos muy variados que van desde rock en español pasando por Rap/Hip-Hop hasta llegar a reguetón."
+  },
+  "skills": {
+  "title": "Habilidades"
   }
 }

@@ -26,5 +26,8 @@
   "gamingText": "In my free time I enjoy playing competitive and casual video games. I also play soccer and train 3 times a week at university.",
   "music": "Music",
   "musicText": "I listen to all kinds of music. I have very varied tastes ranging from rock in Spanish through Rap/Hip-Hop to reggaeton."
+  },
+  "skills": {
+  "title": "Skills"
   }
 }

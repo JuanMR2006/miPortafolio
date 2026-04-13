@@ -35,6 +35,10 @@
   "project1": {
     "title": "Workshop and Seminar Management",
     "description": "Platform to manage workshops and academic events with different user roles. Includes registration, quota control, validations and automatic PDF certificate generation. I developed the backend logic with Java and Spring Boot."
+  },
+  "project2": {
+    "title": "Vehicle Management REST API",
+    "description": "REST API for vehicle inventory with layered architecture (Controller, Service and Repository). Implements complete CRUD operations, data validation, error handling and uses MongoDB as NoSQL database."
   }
-}
+  }
 }

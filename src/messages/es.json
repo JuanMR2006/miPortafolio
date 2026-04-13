@@ -35,6 +35,10 @@
   "project1": {
     "title": "Gestión de Talleres y Seminarios",
     "description": "Plataforma para gestionar talleres y eventos académicos con diferentes roles de usuario. Incluye registro, control de cupos, validaciones y generación automática de certificados PDF. Desarrollé la lógica backend con Java y Spring Boot."
+  },
+  "project2": {
+    "title": "API REST de Gestión Vehicular",
+    "description": "API REST para inventario de vehículos con arquitectura por capas (Controller, Service y Repository). Implementa operaciones CRUD completas, validaciones de datos, manejo de errores y utiliza MongoDB como base de datos NoSQL."
   }
-}
+  } 
 }

@@ -1,0 +1,16 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About me",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Juan José Montezuma Rosero",
+    "title": "Software Engineering Student",
+    "subtitle": "Backend Developer | Growth Mindset",
+    "downloadCV": "Download CV"
+  }
+}

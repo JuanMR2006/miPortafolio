@@ -39,6 +39,10 @@
   "project2": {
     "title": "API REST de Gestión Vehicular",
     "description": "API REST para inventario de vehículos con arquitectura por capas (Controller, Service y Repository). Implementa operaciones CRUD completas, validaciones de datos, manejo de errores y utiliza MongoDB como base de datos NoSQL."
+  },
+  "project3": {
+    "title": "Diario Emocional con Chatbot",
+    "description": "Aplicación de seguimiento emocional donde los usuarios registran diariamente sus niveles de estrés, alegría y otras emociones. Incluye un chatbot motivacional que responde según el estado anímico y genera reportes semanales con gráficas de evolución emocional."
   }
-  } 
+  }
 }

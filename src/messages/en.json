@@ -39,6 +39,10 @@
   "project2": {
     "title": "Vehicle Management REST API",
     "description": "REST API for vehicle inventory with layered architecture (Controller, Service and Repository). Implements complete CRUD operations, data validation, error handling and uses MongoDB as NoSQL database."
+  },
+  "project3": {
+    "title": "Emotional Diary with Chatbot",
+    "description": "Emotional tracking application where users daily record their stress, joy and other emotion levels. Includes a motivational chatbot that responds according to mood and generates weekly reports with emotional evolution charts."
   }
   }
 }

@@ -37,7 +37,6 @@ export default function Projects() {
           >
             <div className="bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all h-full flex flex-col">
               
-              {/* Project Number */}
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-5xl font-bold bg-gradient-to-br from-blue-600 to-indigo-600 bg-clip-text text-transparent">
                   01
@@ -45,17 +44,14 @@ export default function Projects() {
                 <div className="h-1 flex-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full"></div>
               </div>
 
-              {/* Title */}
               <h3 className="text-xl sm:text-2xl font-bold text-gray-800 dark:text-gray-200 mb-3">
                 {t('project1.title')}
               </h3>
 
-              {/* Description */}
               <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 line-clamp-4 flex-1">
                 {t('project1.description')}
               </p>
 
-              {/* Technologies */}
               <div className="flex flex-wrap gap-2 mb-6">
                 <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded-lg text-xs font-medium">
                   Java
@@ -68,7 +64,6 @@ export default function Projects() {
                 </span>
               </div>
 
-              {/* GitHub Button */}
               <motion.a
                 href="https://github.com/JuanMR2006/gestion-talleres"
                 target="_blank"
@@ -94,7 +89,6 @@ export default function Projects() {
           >
             <div className="bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all h-full flex flex-col">
               
-              {/* Project Number */}
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-5xl font-bold bg-gradient-to-br from-blue-600 to-indigo-600 bg-clip-text text-transparent">
                   02
@@ -102,17 +96,14 @@ export default function Projects() {
                 <div className="h-1 flex-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full"></div>
               </div>
 
-              {/* Title */}
               <h3 className="text-xl sm:text-2xl font-bold text-gray-800 dark:text-gray-200 mb-3">
                 {t('project2.title')}
               </h3>
 
-              {/* Description */}
               <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 line-clamp-4 flex-1">
                 {t('project2.description')}
               </p>
 
-              {/* Technologies */}
               <div className="flex flex-wrap gap-2 mb-6">
                 <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded-lg text-xs font-medium">
                   Java
@@ -125,7 +116,6 @@ export default function Projects() {
                 </span>
               </div>
 
-              {/* GitHub Button */}
               <motion.a
                 href="https://github.com/JuanMR2006/vehiculos-api"
                 target="_blank"
@@ -137,6 +127,53 @@ export default function Projects() {
                 <Code size={18} />
                 Ver en GitHub
               </motion.a>
+
+            </div>
+          </motion.div>
+
+          {/* Project 3 - Diario Emocional */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="group"
+          >
+            <div className="bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all h-full flex flex-col">
+              
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-5xl font-bold bg-gradient-to-br from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                  03
+                </span>
+                <div className="h-1 flex-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full"></div>
+              </div>
+
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-800 dark:text-gray-200 mb-3">
+                {t('project3.title')}
+              </h3>
+
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 line-clamp-4 flex-1">
+                {t('project3.description')}
+              </p>
+
+              <div className="flex flex-wrap gap-2 mb-6">
+                <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded-lg text-xs font-medium">
+                  React
+                </span>
+                <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded-lg text-xs font-medium">
+                  Node.js
+                </span>
+                <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded-lg text-xs font-medium">
+                  MongoDB
+                </span>
+                <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 rounded-lg text-xs font-medium">
+                  Chatbot
+                </span>
+              </div>
+
+              <div className="flex items-center justify-center px-4 py-3 bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-400 rounded-xl text-sm font-medium">
+                Proyecto colaborativo
+              </div>
 
             </div>
           </motion.div>

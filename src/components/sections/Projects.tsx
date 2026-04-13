@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
-import { GitHub } from 'lucide-react';
+import { Code } from 'lucide-react';
 
 export default function Projects() {
   const t = useTranslations('projects');
@@ -77,7 +77,7 @@ export default function Projects() {
                 whileTap={{ scale: 0.95 }}
                 className="flex items-center justify-center gap-2 px-4 py-3 bg-gray-900 dark:bg-gray-700 hover:bg-gray-800 dark:hover:bg-gray-600 text-white rounded-xl transition-all font-medium"
               >
-                <GitHub size={18} />
+                <Code size={18} />
                 Ver en GitHub
               </motion.a>
 

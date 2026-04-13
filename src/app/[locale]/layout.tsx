@@ -4,7 +4,7 @@ import "../globals.css";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
-import LanguageSwitcher from "../../components/ui/LanguageSwitcher";
+import Header from "../../components/layout/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,7 +32,6 @@ export default async function RootLayout({
 }) {
   const { locale } = await params;
   
-  // Validar que el locale sea válido
   if (!locales.includes(locale)) {
     notFound();
   }
@@ -40,13 +39,13 @@ export default async function RootLayout({
   const messages = await getMessages({ locale });
 
   return (
-  <html lang={locale}>
-    <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-      <NextIntlClientProvider messages={messages} locale={locale}>
-        <LanguageSwitcher />
-        {children}
-      </NextIntlClientProvider>
-    </body>
-  </html>
+    <html lang={locale}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <NextIntlClientProvider messages={messages} locale={locale}>
+          <Header />
+          {children}
+        </NextIntlClientProvider>
+      </body>
+    </html>
   );
 }

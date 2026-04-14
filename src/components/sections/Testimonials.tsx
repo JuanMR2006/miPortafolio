@@ -23,9 +23,40 @@ export default function Testimonials() {
           </h2>
         </motion.div>
 
-        {/* Testimonials Container - vacío por ahora */}
-        <div className="relative">
-          {/* Aquí irán los testimonios */}
+        {/* Testimonials Container */}
+        <div className="relative max-w-5xl mx-auto">
+          
+          {/* Testimonial Card 1 */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="bg-gradient-to-br from-blue-600 to-indigo-600 rounded-3xl p-8 lg:p-12 shadow-2xl"
+          >
+            <div className="flex flex-col items-center text-center">
+              
+              {/* Quote Icon */}
+              <div className="text-6xl text-white/30 mb-4">"</div>
+              
+              {/* Testimonial Text - Placeholder por ahora */}
+              <p className="text-lg sm:text-xl text-white leading-relaxed mb-8">
+                Testimonial text will go here
+              </p>
+
+              {/* Author Info - Placeholder */}
+              <div className="flex flex-col items-center">
+                <p className="text-lg font-bold text-white mb-1">
+                  Author Name
+                </p>
+                <p className="text-sm text-white/80">
+                  Position
+                </p>
+              </div>
+
+            </div>
+          </motion.div>
+
         </div>
 
       </div>

@@ -59,6 +59,11 @@
     "text": "Juan José is a committed student, he always delivers quality work and shows great interest in learning new technologies.",
     "author": "Luisa María Montero",
     "position": "Student"
+  },
+  "testimonial2": {
+    "text": "Working with Juan was an excellent experience, he is organized and always brings good ideas to the team.",
+    "author": "Juan Sebastián Castaño",
+    "position": "Student"
   }
   }
 }

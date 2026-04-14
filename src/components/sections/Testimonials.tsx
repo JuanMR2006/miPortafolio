@@ -75,13 +75,18 @@ export default function Testimonials() {
                 Testimonial 2 text will go here
               </p>
 
-              {/* Author Info - Placeholder */}
+              {/* Testimonial Text */}
+              <p className="text-lg sm:text-xl text-white leading-relaxed mb-8">
+                {t('testimonial2.text')}
+              </p>
+
+              {/* Author Info */}
               <div className="flex flex-col items-center">
                 <p className="text-lg font-bold text-white mb-1">
-                  Author Name 2
+                  {t('testimonial2.author')}
                 </p>
                 <p className="text-sm text-white/80">
-                  Position 2
+                  {t('testimonial2.position')}
                 </p>
               </div>
 

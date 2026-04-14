@@ -1,11 +1,11 @@
 {
   "nav": {
-  "home": "Inicio",
-  "about": "Sobre mí",
-  "projects": "Proyectos",
-  "testimonials": "Testimonios",
-  "experience": "Experiencia",
-  "contact": "Contacto"
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "testimonials": "Testimonios",
+    "experience": "Experiencia",
+    "contact": "Contacto"
   },
   "hero": {
     "greeting": "Hola, soy",
@@ -17,101 +17,97 @@
     "contact": "Contacto"
   },
   "about": {
-  "title": "Sobre mí",
-  "intro": "Me motiva construir cosas que funcionen. Cuando escribo código, busco que sea limpio, eficiente y que realmente resuelva problemas. Actualmente cursando quinto semestre de Ingeniería de Software, cada proyecto es una oportunidad para aprender algo nuevo y mejorar mis habilidades en desarrollo backend.",
-  "goals": "A qué me quiero dedicar",
-  "goalsText": "Mi objetivo es especializarme en desarrollo backend, construyendo sistemas robustos y escalables. Me interesa trabajar con tecnologías como Java y Spring Boot, además de explorar arquitecturas de microservicios y bases de datos. Busco oportunidades donde pueda crecer profesionalmente mientras aporto valor con código limpio y eficiente.",
-  "development": "Desarrollo e Intereses",
-  "developmentText": "Actualmente enfocado en backend con Java, también tengo interés en ciberseguridad y gestión de bases de datos. Me gusta entender cómo funcionan las cosas por dentro y aplicar buenas prácticas en cada proyecto.",
-  "gaming": "Videojuegos",
-  "gamingText": "En mi tiempo libre disfruto jugando videojuegos competitivos y casuales. También juego fútbol y entreno 3 veces por semana en la universidad.",
-  "music": "Música",
-  "musicText": "Escucho música de todo tipo. Tengo gustos muy variados que van desde rock en español pasando por Rap/Hip-Hop hasta llegar a reguetón."
+    "title": "Sobre mí",
+    "intro": "Me motiva construir cosas que funcionen. Cuando escribo código, busco que sea limpio, eficiente y que realmente resuelva problemas. Actualmente cursando quinto semestre de Ingeniería de Software, cada proyecto es una oportunidad para aprender algo nuevo y mejorar mis habilidades en desarrollo backend.",
+    "goals": "A qué me quiero dedicar",
+    "goalsText": "Mi objetivo es especializarme en desarrollo backend, construyendo sistemas robustos y escalables. Me interesa trabajar con tecnologías como Java y Spring Boot, además de explorar arquitecturas de microservicios y bases de datos. Busco oportunidades donde pueda crecer profesionalmente mientras aporto valor con código limpio y eficiente.",
+    "development": "Desarrollo e Intereses",
+    "developmentText": "Actualmente enfocado en backend con Java, también tengo interés en ciberseguridad y gestión de bases de datos. Me gusta entender cómo funcionan las cosas por dentro y aplicar buenas prácticas en cada proyecto.",
+    "gaming": "Videojuegos",
+    "gamingText": "En mi tiempo libre disfruto jugando videojuegos competitivos y casuales. También juego fútbol y entreno 3 veces por semana en la universidad.",
+    "music": "Música",
+    "musicText": "Escucho música de todo tipo. Tengo gustos muy variados que van desde rock en español pasando por Rap/Hip-Hop hasta llegar a reguetón."
   },
   "skills": {
-  "title": "Habilidades"
+    "title": "Habilidades"
   },
   "projects": {
-  "title": "Mis Proyectos",
-  "readMore": "Leer más",
-  "readLess": "Leer menos",
-  "viewOnGithub": "Ver en GitHub",
-  "collaborativeProject": "Proyecto colaborativo",
-  "project1": {
-    "title": "Gestión de Talleres y Seminarios",
-    "description": "Plataforma para gestionar talleres y eventos académicos con diferentes roles de usuario. Incluye registro, control de cupos, validaciones y generación automática de certificados PDF. Desarrollé la lógica backend con Java y Spring Boot."
-  },
-  "project2": {
-    "title": "API REST de Gestión Vehicular",
-    "description": "API REST para inventario de vehículos con arquitectura por capas (Controller, Service y Repository). Implementa operaciones CRUD completas, validaciones de datos, manejo de errores y utiliza MongoDB como base de datos NoSQL."
-  },
-  "project3": {
-    "title": "Diario Emocional con Chatbot",
-    "description": "Aplicación de seguimiento emocional donde los usuarios registran diariamente sus niveles de estrés, alegría y otras emociones. Incluye un chatbot motivacional que responde según el estado anímico y genera reportes semanales con gráficas de evolución emocional."
-  },
-  "project4": {
-    "title": "Clon de Mercado Libre",
-    "description": "Réplica de la interfaz de Mercado Libre desarrollada en equipo aplicando GitFlow como metodología de trabajo. El proyecto consistió en replicar fielmente el diseño y funcionalidades básicas del sitio utilizando HTML, CSS y JavaScript vanilla."
-  }
+    "title": "Mis Proyectos",
+    "readMore": "Leer más",
+    "readLess": "Leer menos",
+    "viewOnGithub": "Ver en GitHub",
+    "collaborativeProject": "Proyecto colaborativo",
+    "project1": {
+      "title": "Gestión de Talleres y Seminarios",
+      "description": "Plataforma para gestionar talleres y eventos académicos con diferentes roles de usuario. Incluye registro, control de cupos, validaciones y generación automática de certificados PDF. Desarrollé la lógica backend con Java y Spring Boot."
+    },
+    "project2": {
+      "title": "API REST de Gestión Vehicular",
+      "description": "API REST para inventario de vehículos con arquitectura por capas (Controller, Service y Repository). Implementa operaciones CRUD completas, validaciones de datos, manejo de errores y utiliza MongoDB como base de datos NoSQL."
+    },
+    "project3": {
+      "title": "Diario Emocional con Chatbot",
+      "description": "Aplicación de seguimiento emocional donde los usuarios registran diariamente sus niveles de estrés, alegría y otras emociones. Incluye un chatbot motivacional que responde según el estado anímico y genera reportes semanales con gráficas de evolución emocional."
+    },
+    "project4": {
+      "title": "Clon de Mercado Libre",
+      "description": "Réplica de la interfaz de Mercado Libre desarrollada en equipo aplicando GitFlow como metodología de trabajo. El proyecto consistió en replicar fielmente el diseño y funcionalidades básicas del sitio utilizando HTML, CSS y JavaScript vanilla."
+    }
   },
   "testimonials": {
-  "title": "Testimonios",
-  "testimonial1": {
-    "text": "Juan José es un estudiante comprometido, siempre entrega trabajos de calidad y demuestra gran interés por aprender nuevas tecnologías.",
-    "author": "Luisa María Montero",
-    "position": "Estudiante"
-  },
-  "testimonial2": {
-    "text": "Trabajar con Juan fue una excelente experiencia, es organizado y siempre aporta buenas ideas en equipo.",
-    "author": "Juan Sebastián Castaño",
-    "position": "Estudiante"
-  },
-  "testimonial3": {
-    "text": "Destaca por su responsabilidad y capacidad para resolver problemas de forma eficiente.",
-    "author": "Laura Angélica Rosero",
-    "position": "Familiar"
-  },
-  "testimonial4": {
-    "text": "Es una persona muy concentrada y dedicada en todo lo que hace. Su enfoque en los detalles y compromiso con la calidad son admirables.",
-    "author": "Oscar Montezuma",
-    "position": "Familiar"
-  }
+    "title": "Testimonios",
+    "testimonial1": {
+      "text": "Juan José es un estudiante comprometido, siempre entrega trabajos de calidad y demuestra gran interés por aprender nuevas tecnologías.",
+      "author": "Luisa María Montero",
+      "position": "Estudiante"
+    },
+    "testimonial2": {
+      "text": "Trabajar con Juan fue una excelente experiencia, es organizado y siempre aporta buenas ideas en equipo.",
+      "author": "Juan Sebastián Castaño",
+      "position": "Estudiante"
+    },
+    "testimonial3": {
+      "text": "Destaca por su responsabilidad y capacidad para resolver problemas de forma eficiente.",
+      "author": "Laura Angélica Rosero",
+      "position": "Familiar"
+    },
+    "testimonial4": {
+      "text": "Es una persona muy concentrada y dedicada en todo lo que hace. Su enfoque en los detalles y compromiso con la calidad son admirables.",
+      "author": "Oscar Montezuma",
+      "position": "Familiar"
+    }
   },
   "experience": {
-  "title": "Experiencia y Educación",
-  "experience": {
-    "title": "Experiencia",
-    "period": "Actualmente",
-    "description": "Actualmente me encuentro en búsqueda de mi primera experiencia profesional donde pueda aplicar mis conocimientos en desarrollo backend y seguir aprendiendo en un entorno real."
-  },
-  "education": {
-    "title": "Educación",
-    "degree": "Ingeniería de Software",
-    "institution": "Universidad Cooperativa de Colombia",
-    "period": "2024 - Presente",
-    "relevantCourses": "Cursos relevantes:",
-    "courses": [
-      "Programación",
-      "Estructura de datos",
-      "Bases de datos",
-      "Diseño de software"
-    ]
-  }
+    "title": "Experiencia y Educación",
+    "experience": {
+      "title": "Experiencia",
+      "period": "Actualmente",
+      "description": "Actualmente me encuentro en búsqueda de mi primera experiencia profesional donde pueda aplicar mis conocimientos en desarrollo backend y seguir aprendiendo en un entorno real."
+    },
+    "education": {
+      "title": "Educación",
+      "degree": "Ingeniería de Software",
+      "institution": "Universidad Cooperativa de Colombia",
+      "period": "2024 - Presente"
+    }
   },
   "contact": {
-  "title": "Contáctame",
-  "subtitle": "Cuéntame sobre tu proyecto o idea",
-  "form": {
-    "name": "Nombre",
-    "namePlaceholder": "Tu nombre completo",
-    "email": "Email",
-    "emailPlaceholder": "tu@email.com",
-    "message": "Razón / Mensaje",
-    "messagePlaceholder": "Cuéntame en qué puedo ayudarte...",
-    "send": "Enviar Mensaje",
-    "sending": "Enviando...",
-    "success": "¡Mensaje enviado con éxito!",
-    "error": "Error al enviar. Intenta de nuevo."
-  }
+    "title": "Contáctame",
+    "subtitle": "Cuéntame sobre tu proyecto o idea",
+    "form": {
+      "name": "Nombre",
+      "namePlaceholder": "Tu nombre completo",
+      "email": "Email",
+      "emailPlaceholder": "tu@email.com",
+      "message": "Razón / Mensaje",
+      "messagePlaceholder": "Cuéntame en qué puedo ayudarte...",
+      "send": "Enviar Mensaje",
+      "sending": "Enviando...",
+      "success": "¡Mensaje enviado con éxito!",
+      "error": "Error al enviar. Intenta de nuevo."
+    }
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados"
   }
 }

@@ -91,5 +91,21 @@
       "Software design"
     ]
   }
+  },
+  "contact": {
+  "title": "Contact Me",
+  "subtitle": "Tell me about your project or idea",
+  "form": {
+    "name": "Name",
+    "namePlaceholder": "Your full name",
+    "email": "Email",
+    "emailPlaceholder": "your@email.com",
+    "message": "Reason / Message",
+    "messagePlaceholder": "Tell me how I can help you...",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "success": "Message sent successfully!",
+    "error": "Error sending. Try again."
+  }
   }
 }

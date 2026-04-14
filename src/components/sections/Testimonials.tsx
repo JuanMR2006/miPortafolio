@@ -1,13 +1,14 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function Testimonials() {
   const t = useTranslations('testimonials');
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(0);
 
   const testimonials = [
     {
@@ -36,6 +37,7 @@ export default function Testimonials() {
   // Auto-rotate every 4 seconds
   useEffect(() => {
     const interval = setInterval(() => {
+      setDirection(1);
       setCurrentIndex((prev) => (prev + 1) % testimonials.length);
     }, 4000);
 
@@ -43,10 +45,12 @@ export default function Testimonials() {
   }, [testimonials.length]);
 
   const nextTestimonial = () => {
+    setDirection(1);
     setCurrentIndex((prev) => (prev + 1) % testimonials.length);
   };
 
   const prevTestimonial = () => {
+    setDirection(-1);
     setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
@@ -56,8 +60,23 @@ export default function Testimonials() {
     testimonials[(currentIndex + 1) % testimonials.length],
   ];
 
+  const slideVariants = {
+    enter: (direction: number) => ({
+      x: direction > 0 ? 1000 : -1000,
+      opacity: 0,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+    },
+    exit: (direction: number) => ({
+      x: direction > 0 ? -1000 : 1000,
+      opacity: 0,
+    }),
+  };
+
   return (
-    <section id="testimonios" className="px-4 sm:px-6 lg:px-8 py-24 bg-white dark:bg-gray-900">
+    <section id="testimonios" className="px-4 sm:px-6 lg:px-8 py-24 bg-white dark:bg-gray-900 overflow-hidden">
       <div className="max-w-7xl mx-auto w-full">
         
         {/* Section Title */}
@@ -93,16 +112,24 @@ export default function Testimonials() {
             <ChevronRight size={24} className="text-blue-600 dark:text-blue-400" />
           </button>
 
-          {/* Testimonials Grid - 2 cards */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <AnimatePresence mode="wait">
-              {visibleTestimonials.map((testimonial, idx) => (
-                <motion.div
-                  key={`${testimonial.id}-${currentIndex}`}
-                  initial={{ opacity: 0, x: idx === 0 ? -50 : 50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: idx === 0 ? -50 : 50 }}
-                  transition={{ duration: 0.5 }}
+          {/* Testimonials Grid - 2 cards with slide animation */}
+          <div className="relative overflow-hidden">
+            <motion.div
+              key={currentIndex}
+              custom={direction}
+              variants={slideVariants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{
+                x: { type: "spring", stiffness: 300, damping: 30 },
+                opacity: { duration: 0.3 },
+              }}
+              className="grid grid-cols-1 lg:grid-cols-2 gap-6"
+            >
+              {visibleTestimonials.map((testimonial) => (
+                <div
+                  key={testimonial.id}
                   className={`bg-gradient-to-br ${testimonial.gradient} rounded-3xl p-8 shadow-2xl`}
                 >
                   <div className="flex flex-col items-center text-center h-full justify-between">
@@ -123,9 +150,9 @@ export default function Testimonials() {
                     </div>
 
                   </div>
-                </motion.div>
+                </div>
               ))}
-            </AnimatePresence>
+            </motion.div>
           </div>
 
           {/* Dots Indicator */}
@@ -133,7 +160,10 @@ export default function Testimonials() {
             {testimonials.map((_, idx) => (
               <button
                 key={idx}
-                onClick={() => setCurrentIndex(idx)}
+                onClick={() => {
+                  setDirection(idx > currentIndex ? 1 : -1);
+                  setCurrentIndex(idx);
+                }}
                 className={`w-3 h-3 rounded-full transition-all ${
                   idx === currentIndex
                     ? 'bg-blue-600 dark:bg-blue-400 w-8'

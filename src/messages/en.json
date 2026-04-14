@@ -1,11 +1,11 @@
 {
   "nav": {
-  "home": "Home",
-  "about": "About me",
-  "projects": "Projects",
-  "testimonials": "Testimonials",
-  "experience": "Experience",
-  "contact": "Contact"
+    "home": "Home",
+    "about": "About me",
+    "projects": "Projects",
+    "testimonials": "Testimonials",
+    "experience": "Experience",
+    "contact": "Contact"
   },
   "hero": {
     "greeting": "Hi, I'm",
@@ -17,80 +17,97 @@
     "contact": "Contact"
   },
   "about": {
-  "title": "About me",
-  "intro": "I'm driven by building things that work. When I write code, I look for it to be clean, efficient and actually solve problems. Currently in my fifth semester of Software Engineering, each project is an opportunity to learn something new and improve my backend development skills.",
-  "goals": "What I want to do",
-  "goalsText": "My goal is to specialize in backend development, building robust and scalable systems. I'm interested in working with technologies like Java and Spring Boot, as well as exploring microservices architectures and databases. I seek opportunities where I can grow professionally while contributing value with clean and efficient code.",
-  "development": "Development & Interests",
-  "developmentText": "Currently focused on backend with Java, I'm also interested in cybersecurity and database management. I like to understand how things work under the hood and apply best practices in each project.",
-  "gaming": "Video Games",
-  "gamingText": "In my free time I enjoy playing competitive and casual video games. I also play soccer and train 3 times a week at university.",
-  "music": "Music",
-  "musicText": "I listen to all kinds of music. I have very varied tastes ranging from rock in Spanish through Rap/Hip-Hop to reggaeton."
+    "title": "About me",
+    "intro": "I'm driven by building things that work. When I write code, I look for it to be clean, efficient and actually solve problems. Currently in my fifth semester of Software Engineering, each project is an opportunity to learn something new and improve my backend development skills.",
+    "goals": "What I want to do",
+    "goalsText": "My goal is to specialize in backend development, building robust and scalable systems. I'm interested in working with technologies like Java and Spring Boot, as well as exploring microservices architectures and databases. I seek opportunities where I can grow professionally while contributing value with clean and efficient code.",
+    "development": "Development & Interests",
+    "developmentText": "Currently focused on backend with Java, I'm also interested in cybersecurity and database management. I like to understand how things work under the hood and apply best practices in each project.",
+    "gaming": "Video Games",
+    "gamingText": "In my free time I enjoy playing competitive and casual video games. I also play soccer and train 3 times a week at university.",
+    "music": "Music",
+    "musicText": "I listen to all kinds of music. I have very varied tastes ranging from rock in Spanish through Rap/Hip-Hop to reggaeton."
   },
   "skills": {
-  "title": "Skills"
+    "title": "Skills"
   },
   "projects": {
-  "title": "My Projects",
-  "readMore": "Read more",
-  "readLess": "Read less",
-  "viewOnGithub": "View on GitHub",
-  "collaborativeProject": "Collaborative project",
-  "project1": {
-    "title": "Workshop and Seminar Management",
-    "description": "Platform to manage workshops and academic events with different user roles. Includes registration, quota control, validations and automatic PDF certificate generation. I developed the backend logic with Java and Spring Boot."
-  },
-  "project2": {
-    "title": "Vehicle Management REST API",
-    "description": "REST API for vehicle inventory with layered architecture (Controller, Service and Repository). Implements complete CRUD operations, data validation, error handling and uses MongoDB as NoSQL database."
-  },
-  "project3": {
-    "title": "Emotional Diary with Chatbot",
-    "description": "Emotional tracking application where users daily record their stress, joy and other emotion levels. Includes a motivational chatbot that responds according to mood and generates weekly reports with emotional evolution charts."
-  },
-  "project4": {
-    "title": "Mercado Libre Clone",
-    "description": "Replica of the Mercado Libre interface developed as a team applying GitFlow as work methodology. The project consisted of faithfully replicating the design and basic functionalities of the site using vanilla HTML, CSS and JavaScript."
-  }
+    "title": "My Projects",
+    "readMore": "Read more",
+    "readLess": "Read less",
+    "viewOnGithub": "View on GitHub",
+    "collaborativeProject": "Collaborative project",
+    "project1": {
+      "title": "Workshop and Seminar Management",
+      "description": "Platform to manage workshops and academic events with different user roles. Includes registration, quota control, validations and automatic PDF certificate generation. I developed the backend logic with Java and Spring Boot."
+    },
+    "project2": {
+      "title": "Vehicle Management REST API",
+      "description": "REST API for vehicle inventory with layered architecture (Controller, Service and Repository). Implements complete CRUD operations, data validation, error handling and uses MongoDB as NoSQL database."
+    },
+    "project3": {
+      "title": "Emotional Diary with Chatbot",
+      "description": "Emotional tracking application where users daily record their stress, joy and other emotion levels. Includes a motivational chatbot that responds according to mood and generates weekly reports with emotional evolution charts."
+    },
+    "project4": {
+      "title": "Mercado Libre Clone",
+      "description": "Replica of the Mercado Libre interface developed as a team applying GitFlow as work methodology. The project consisted of faithfully replicating the design and basic functionalities of the site using vanilla HTML, CSS and JavaScript."
+    }
   },
   "testimonials": {
-  "title": "Testimonials",
-  "testimonial1": {
-    "text": "Juan José is a committed student, he always delivers quality work and shows great interest in learning new technologies.",
-    "author": "Luisa María Montero",
-    "position": "Student"
+    "title": "Testimonials",
+    "testimonial1": {
+      "text": "Juan José is a committed student, he always delivers quality work and shows great interest in learning new technologies.",
+      "author": "Luisa María Montero",
+      "position": "Student"
+    },
+    "testimonial2": {
+      "text": "Working with Juan was an excellent experience, he is organized and always brings good ideas to the team.",
+      "author": "Juan Sebastián Castaño",
+      "position": "Student"
+    },
+    "testimonial3": {
+      "text": "He stands out for his responsibility and ability to solve problems efficiently.",
+      "author": "Laura Angélica Rosero",
+      "position": "Family"
+    },
+    "testimonial4": {
+      "text": "He is a very focused and dedicated person in everything he does. His attention to detail and commitment to quality are admirable.",
+      "author": "Oscar Montezuma",
+      "position": "Family"
+    }
   },
-  "testimonial2": {
-    "text": "Working with Juan was an excellent experience, he is organized and always brings good ideas to the team.",
-    "author": "Juan Sebastián Castaño",
-    "position": "Student"
-  },
-  "testimonial3": {
-    "text": "He stands out for his responsibility and ability to solve problems efficiently.",
-    "author": "Laura Angélica Rosero",
-    "position": "Family"
-  },
-  "testimonial4": {
-    "text": "He is a very focused and dedicated person in everything he does. His attention to detail and commitment to quality are admirable.",
-    "author": "Oscar Montezuma",
-    "position": "Family"
-  }
+  "experience": {
+    "title": "Experience & Education",
+    "experience": {
+      "title": "Experience",
+      "period": "Currently",
+      "description": "I am currently looking for my first professional experience where I can apply my backend development knowledge and continue learning in a real environment."
+    },
+    "education": {
+      "title": "Education",
+      "degree": "Software Engineering",
+      "institution": "Universidad Cooperativa de Colombia",
+      "period": "2024 - Present"
+    }
   },
   "contact": {
-  "title": "Contact Me",
-  "subtitle": "Tell me about your project or idea",
-  "form": {
-    "name": "Name",
-    "namePlaceholder": "Your full name",
-    "email": "Email",
-    "emailPlaceholder": "your@email.com",
-    "message": "Reason / Message",
-    "messagePlaceholder": "Tell me how I can help you...",
-    "send": "Send Message",
-    "sending": "Sending...",
-    "success": "Message sent successfully!",
-    "error": "Error sending. Try again."
-  }
+    "title": "Contact Me",
+    "subtitle": "Tell me about your project or idea",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your full name",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "message": "Reason / Message",
+      "messagePlaceholder": "Tell me how I can help you...",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Error sending. Try again."
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved"
   }
 }

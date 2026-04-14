@@ -32,6 +32,10 @@
   },
   "projects": {
   "title": "My Projects",
+  "readMore": "Read more",
+  "readLess": "Read less",
+  "viewOnGithub": "View on GitHub",
+  "collaborativeProject": "Collaborative project",
   "project1": {
     "title": "Workshop and Seminar Management",
     "description": "Platform to manage workshops and academic events with different user roles. Includes registration, quota control, validations and automatic PDF certificate generation. I developed the backend logic with Java and Spring Boot."
@@ -43,6 +47,10 @@
   "project3": {
     "title": "Emotional Diary with Chatbot",
     "description": "Emotional tracking application where users daily record their stress, joy and other emotion levels. Includes a motivational chatbot that responds according to mood and generates weekly reports with emotional evolution charts."
+  },
+  "project4": {
+    "title": "Mercado Libre Clone",
+    "description": "Replica of the Mercado Libre interface developed as a team applying GitFlow as work methodology. The project consisted of faithfully replicating the design and basic functionalities of the site using vanilla HTML, CSS and JavaScript."
   }
   }
 }

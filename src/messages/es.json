@@ -32,6 +32,10 @@
   },
   "projects": {
   "title": "Mis Proyectos",
+  "readMore": "Leer más",
+  "readLess": "Leer menos",
+  "viewOnGithub": "Ver en GitHub",
+  "collaborativeProject": "Proyecto colaborativo",
   "project1": {
     "title": "Gestión de Talleres y Seminarios",
     "description": "Plataforma para gestionar talleres y eventos académicos con diferentes roles de usuario. Incluye registro, control de cupos, validaciones y generación automática de certificados PDF. Desarrollé la lógica backend con Java y Spring Boot."
@@ -43,6 +47,10 @@
   "project3": {
     "title": "Diario Emocional con Chatbot",
     "description": "Aplicación de seguimiento emocional donde los usuarios registran diariamente sus niveles de estrés, alegría y otras emociones. Incluye un chatbot motivacional que responde según el estado anímico y genera reportes semanales con gráficas de evolución emocional."
+  },
+  "project4": {
+    "title": "Clon de Mercado Libre",
+    "description": "Réplica de la interfaz de Mercado Libre desarrollada en equipo aplicando GitFlow como metodología de trabajo. El proyecto consistió en replicar fielmente el diseño y funcionalidades básicas del sitio utilizando HTML, CSS y JavaScript vanilla."
   }
   }
 }

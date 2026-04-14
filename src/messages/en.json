@@ -54,6 +54,11 @@
   }
   },
   "testimonials": {
-  "title": "Testimonials"
-  } 
+  "title": "Testimonials",
+  "testimonial1": {
+    "text": "Juan José is a committed student, he always delivers quality work and shows great interest in learning new technologies.",
+    "author": "Luisa María Montero",
+    "position": "Student"
+  }
+  }
 }

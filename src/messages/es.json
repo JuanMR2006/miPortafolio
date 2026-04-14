@@ -54,6 +54,11 @@
   }
   },
   "testimonials": {
-  "title": "Testimonios"
+  "title": "Testimonios",
+  "testimonial1": {
+    "text": "Juan José es un estudiante comprometido, siempre entrega trabajos de calidad y demuestra gran interés por aprender nuevas tecnologías.",
+    "author": "Luisa María Montero",
+    "position": "Estudiante"
+  }
   }
 }

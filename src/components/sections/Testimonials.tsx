@@ -1,7 +1,7 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -62,7 +62,7 @@ export default function Testimonials() {
 
   const slideVariants = {
     enter: (direction: number) => ({
-      x: direction > 0 ? 1000 : -1000,
+      x: direction > 0 ? '100%' : '-100%',
       opacity: 0,
     }),
     center: {
@@ -70,13 +70,13 @@ export default function Testimonials() {
       opacity: 1,
     },
     exit: (direction: number) => ({
-      x: direction > 0 ? -1000 : 1000,
+      x: direction > 0 ? '-100%' : '100%',
       opacity: 0,
     }),
   };
 
   return (
-    <section id="testimonios" className="px-4 sm:px-6 lg:px-8 py-24 bg-white dark:bg-gray-900 overflow-hidden">
+    <section id="testimonios" className="px-4 sm:px-6 lg:px-8 py-24 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto w-full">
         
         {/* Section Title */}
@@ -98,7 +98,7 @@ export default function Testimonials() {
           {/* Navigation Buttons */}
           <button
             onClick={prevTestimonial}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-12 z-10 p-3 bg-white dark:bg-gray-800 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-12 z-20 p-3 bg-white dark:bg-gray-800 rounded-full shadow-lg hover:shadow-xl transition-shadow focus:outline-none focus:ring-2 focus:ring-blue-500"
             aria-label="Previous testimonial"
           >
             <ChevronLeft size={24} className="text-blue-600 dark:text-blue-400" />
@@ -106,53 +106,55 @@ export default function Testimonials() {
 
           <button
             onClick={nextTestimonial}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-12 z-10 p-3 bg-white dark:bg-gray-800 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-12 z-20 p-3 bg-white dark:bg-gray-800 rounded-full shadow-lg hover:shadow-xl transition-shadow focus:outline-none focus:ring-2 focus:ring-blue-500"
             aria-label="Next testimonial"
           >
             <ChevronRight size={24} className="text-blue-600 dark:text-blue-400" />
           </button>
 
-          {/* Testimonials Grid - 2 cards with slide animation */}
-          <div className="relative overflow-hidden">
-            <motion.div
-              key={currentIndex}
-              custom={direction}
-              variants={slideVariants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              transition={{
-                x: { type: "spring", stiffness: 300, damping: 30 },
-                opacity: { duration: 0.3 },
-              }}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-6"
-            >
-              {visibleTestimonials.map((testimonial) => (
-                <div
-                  key={testimonial.id}
-                  className={`bg-gradient-to-br ${testimonial.gradient} rounded-3xl p-8 shadow-2xl`}
-                >
-                  <div className="flex flex-col items-center text-center h-full justify-between">
-                    
-                    <div className="text-6xl text-white/30 mb-4">"</div>
-                    
-                    <p className="text-base sm:text-lg text-white leading-relaxed mb-6 flex-1">
-                      {t(testimonial.textKey)}
-                    </p>
+          {/* Testimonials Container with fixed height */}
+          <div className="relative overflow-hidden min-h-[400px] flex items-center">
+            <AnimatePresence initial={false} mode="wait" custom={direction}>
+              <motion.div
+                key={currentIndex}
+                custom={direction}
+                variants={slideVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{
+                  x: { type: "tween", duration: 0.5, ease: "easeInOut" },
+                  opacity: { duration: 0.3 },
+                }}
+                className="w-full grid grid-cols-1 lg:grid-cols-2 gap-6 absolute inset-0"
+              >
+                {visibleTestimonials.map((testimonial) => (
+                  <div
+                    key={testimonial.id}
+                    className={`bg-gradient-to-br ${testimonial.gradient} rounded-3xl p-8 shadow-2xl flex items-center justify-center`}
+                  >
+                    <div className="flex flex-col items-center text-center justify-between h-full">
+                      
+                      <div className="text-6xl text-white/30 mb-4">"</div>
+                      
+                      <p className="text-base sm:text-lg text-white leading-relaxed mb-6 flex-1 flex items-center">
+                        {t(testimonial.textKey)}
+                      </p>
 
-                    <div className="flex flex-col items-center">
-                      <p className="text-lg font-bold text-white mb-1">
-                        {t(testimonial.authorKey)}
-                      </p>
-                      <p className="text-sm text-white/80">
-                        {t(testimonial.positionKey)}
-                      </p>
+                      <div className="flex flex-col items-center">
+                        <p className="text-lg font-bold text-white mb-1">
+                          {t(testimonial.authorKey)}
+                        </p>
+                        <p className="text-sm text-white/80">
+                          {t(testimonial.positionKey)}
+                        </p>
+                      </div>
+
                     </div>
-
                   </div>
-                </div>
-              ))}
-            </motion.div>
+                ))}
+              </motion.div>
+            </AnimatePresence>
           </div>
 
           {/* Dots Indicator */}
@@ -164,10 +166,10 @@ export default function Testimonials() {
                   setDirection(idx > currentIndex ? 1 : -1);
                   setCurrentIndex(idx);
                 }}
-                className={`w-3 h-3 rounded-full transition-all ${
+                className={`h-3 rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-blue-500 ${
                   idx === currentIndex
                     ? 'bg-blue-600 dark:bg-blue-400 w-8'
-                    : 'bg-gray-300 dark:bg-gray-600'
+                    : 'bg-gray-300 dark:bg-gray-600 w-3'
                 }`}
                 aria-label={`Go to testimonial ${idx + 1}`}
               />

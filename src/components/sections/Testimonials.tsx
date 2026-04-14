@@ -95,15 +95,15 @@ export default function Testimonials() {
               <div className="text-6xl text-white/30 mb-4">"</div>
               
               <p className="text-lg sm:text-xl text-white leading-relaxed mb-8">
-                Testimonial 3 text will go here
+                {t('testimonial3.text')}
               </p>
 
               <div className="flex flex-col items-center">
                 <p className="text-lg font-bold text-white mb-1">
-                  Author Name 3
+                  {t('testimonial3.author')}
                 </p>
                 <p className="text-sm text-white/80">
-                  Position 3
+                  {t('testimonial3.position')}
                 </p>
               </div>
 

@@ -36,15 +36,12 @@ export default function Testimonials() {
           >
             <div className="flex flex-col items-center text-center">
               
-              {/* Quote Icon */}
               <div className="text-6xl text-white/30 mb-4">"</div>
               
-              {/* Testimonial Text */}
               <p className="text-lg sm:text-xl text-white leading-relaxed mb-8">
                 {t('testimonial1.text')}
               </p>
 
-              {/* Author Info */}
               <div className="flex flex-col items-center">
                 <p className="text-lg font-bold text-white mb-1">
                   {t('testimonial1.author')}
@@ -67,21 +64,46 @@ export default function Testimonials() {
           >
             <div className="flex flex-col items-center text-center">
               
-              {/* Quote Icon */}
               <div className="text-6xl text-white/30 mb-4">"</div>
-    
-              {/* Testimonial Text */}
+              
               <p className="text-lg sm:text-xl text-white leading-relaxed mb-8">
                 {t('testimonial2.text')}
               </p>
 
-              {/* Author Info */}
               <div className="flex flex-col items-center">
                 <p className="text-lg font-bold text-white mb-1">
                   {t('testimonial2.author')}
                 </p>
                 <p className="text-sm text-white/80">
                   {t('testimonial2.position')}
+                </p>
+              </div>
+
+            </div>
+          </motion.div>
+
+          {/* Testimonial Card 3 */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="bg-gradient-to-br from-emerald-600 to-teal-600 rounded-3xl p-8 lg:p-12 shadow-2xl"
+          >
+            <div className="flex flex-col items-center text-center">
+              
+              <div className="text-6xl text-white/30 mb-4">"</div>
+              
+              <p className="text-lg sm:text-xl text-white leading-relaxed mb-8">
+                Testimonial 3 text will go here
+              </p>
+
+              <div className="flex flex-col items-center">
+                <p className="text-lg font-bold text-white mb-1">
+                  Author Name 3
+                </p>
+                <p className="text-sm text-white/80">
+                  Position 3
                 </p>
               </div>
 

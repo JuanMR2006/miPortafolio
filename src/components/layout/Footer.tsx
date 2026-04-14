@@ -51,40 +51,50 @@ export default function Footer() {
           >
             <div className="flex items-center gap-2 mb-4">
               <Code size={28} className="text-white" />
-              <h3 className="text-2xl font-bold">Juan José Montezuma</h3>
+              <h3 className="text-2xl font-bold">{t('brand')}</h3>
             </div>
             <p className="text-white/80 text-sm leading-relaxed">
-              Backend Developer apasionado por crear soluciones eficientes y escalables.
+              {t('quote')}
             </p>
           </motion.div>
 
-          {/* Column 2 - Quick Links */}
+          {/* Column 2 - Menu Links */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h4 className="text-lg font-bold mb-4">Enlaces</h4>
+            <h4 className="text-lg font-bold mb-4">{t('menu')}</h4>
             <ul className="space-y-2">
               <li>
                 <Link href="#inicio" className="text-white/80 hover:text-white transition-colors">
-                  Inicio
+                  {t('home')}
                 </Link>
               </li>
               <li>
                 <Link href="#sobre-mi" className="text-white/80 hover:text-white transition-colors">
-                  Sobre mí
+                  {t('about')}
                 </Link>
               </li>
               <li>
                 <Link href="#proyectos" className="text-white/80 hover:text-white transition-colors">
-                  Proyectos
+                  {t('projects')}
+                </Link>
+              </li>
+              <li>
+                <Link href="#testimonios" className="text-white/80 hover:text-white transition-colors">
+                  {t('testimonials')}
+                </Link>
+              </li>
+              <li>
+                <Link href="#experiencia" className="text-white/80 hover:text-white transition-colors">
+                  {t('experience')}
                 </Link>
               </li>
               <li>
                 <Link href="#contacto" className="text-white/80 hover:text-white transition-colors">
-                  Contacto
+                  {t('contact')}
                 </Link>
               </li>
             </ul>
@@ -97,7 +107,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <h4 className="text-lg font-bold mb-4">Sígueme</h4>
+            <h4 className="text-lg font-bold mb-4">{t('follow')}</h4>
             <div className="flex gap-4">
               <motion.a
                 href="https://github.com/JuanMR2006"
@@ -130,9 +140,11 @@ export default function Footer() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="text-white/80 text-sm flex items-center gap-2 justify-center mb-8"
+          className="text-white/80 text-sm flex flex-wrap items-center gap-2 justify-center mb-8"
         >
-          <span>Hecho con</span>
+          <span>{t('madeWith')}</span>
+          <Heart size={16} className="text-red-400 fill-red-400" />
+          <span>{t('using')}</span>
           {technologies.map(({ name, Icon }) => (
             <div key={name} className="flex items-center gap-1">
               <Icon size={16} />
@@ -149,7 +161,7 @@ export default function Footer() {
           transition={{ duration: 0.6, delay: 0.8 }}
           className="text-center text-white/60 text-sm border-t border-white/10 pt-8"
         >
-          <p>© {currentYear} Juan José Montezuma · Todos los derechos reservados</p>
+          <p>© {currentYear} {t('brand')} · {t('rights')}</p>
         </motion.div>
 
       </div>

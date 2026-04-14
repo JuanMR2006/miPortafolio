@@ -27,85 +27,126 @@ export default function Experience() {
         {/* Timeline */}
         <div className="relative max-w-4xl mx-auto">
           
-          {/* Vertical Line */}
-          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-600 to-indigo-600"></div>
+          {/* Vertical Line - Centered */}
+          <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-600 via-purple-600 to-pink-600"></div>
 
           {/* Timeline Items */}
-          <div className="space-y-12">
+          <div className="space-y-16">
             
-            {/* Item 1 - Looking for Experience */}
+            {/* Item 1 - Looking for Experience (Left Side) */}
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
+              initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative flex items-start md:justify-end md:w-1/2 md:pr-12 pl-20 md:pl-0"
+              transition={{ duration: 0.7, type: "spring" }}
+              className="relative flex items-center"
             >
-              {/* Icon */}
-              <div className="absolute left-4 md:left-auto md:right-[-2.5rem] w-12 h-12 rounded-full bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center shadow-lg z-10">
-                <Briefcase size={24} className="text-white" />
+              <div className="w-full md:w-1/2 md:pr-12">
+                {/* Content Card */}
+                <motion.div
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  className="bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl p-6 shadow-2xl hover:shadow-blue-500/50 transition-all"
+                >
+                  <div className="flex items-center gap-3 mb-3">
+                    <Briefcase size={28} className="text-white" />
+                    <h3 className="text-2xl font-bold text-white">
+                      {t('experience.title')}
+                    </h3>
+                  </div>
+                  <p className="text-sm text-white/80 mb-3 font-semibold">
+                    {t('experience.period')}
+                  </p>
+                  <p className="text-base text-white/90 leading-relaxed">
+                    {t('experience.description')}
+                  </p>
+                </motion.div>
               </div>
 
-              {/* Content Card */}
-              <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-shadow w-full">
-                <div className="flex items-center gap-3 mb-3">
-                  <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200">
-                    {t('experience.title')}
-                  </h3>
-                </div>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
-                  {t('experience.period')}
-                </p>
-                <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed">
-                  {t('experience.description')}
-                </p>
-              </div>
+              {/* Icon Circle - Centered */}
+              <motion.div
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                whileHover={{ scale: 1.2, rotate: 360 }}
+                className="absolute left-1/2 -translate-x-1/2 w-16 h-16 rounded-full bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center shadow-xl z-10 border-4 border-white dark:border-gray-900"
+              >
+                <Briefcase size={28} className="text-white" />
+              </motion.div>
+
+              {/* Empty space for right side on desktop */}
+              <div className="hidden md:block w-1/2"></div>
             </motion.div>
 
-            {/* Item 2 - Education */}
+            {/* Item 2 - Education (Right Side) */}
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
+              initial={{ opacity: 0, x: 100 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="relative flex items-start md:justify-start md:w-1/2 md:ml-auto md:pl-12 pl-20 md:pr-0"
+              transition={{ duration: 0.7, type: "spring", delay: 0.2 }}
+              className="relative flex items-center"
             >
-              {/* Icon */}
-              <div className="absolute left-4 md:left-[-2.5rem] w-12 h-12 rounded-full bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center shadow-lg z-10">
-                <GraduationCap size={24} className="text-white" />
-              </div>
+              {/* Empty space for left side on desktop */}
+              <div className="hidden md:block w-1/2"></div>
 
-              {/* Content Card */}
-              <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-shadow w-full">
-                <div className="flex items-center gap-3 mb-3">
-                  <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200">
-                    {t('education.title')}
-                  </h3>
-                </div>
-                <p className="text-base font-semibold text-gray-800 dark:text-gray-200 mb-2">
-                  {t('education.degree')}
-                </p>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
-                  {t('education.institution')}
-                </p>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                  {t('education.period')}
-                </p>
-                
-                {/* Relevant Courses */}
-                <div>
-                  <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
-                    {t('education.relevantCourses')}
+              {/* Icon Circle - Centered */}
+              <motion.div
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                whileHover={{ scale: 1.2, rotate: -360 }}
+                className="absolute left-1/2 -translate-x-1/2 w-16 h-16 rounded-full bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center shadow-xl z-10 border-4 border-white dark:border-gray-900"
+              >
+                <GraduationCap size={28} className="text-white" />
+              </motion.div>
+
+              <div className="w-full md:w-1/2 md:pl-12">
+                {/* Content Card */}
+                <motion.div
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  className="bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl p-6 shadow-2xl hover:shadow-purple-500/50 transition-all"
+                >
+                  <div className="flex items-center gap-3 mb-3">
+                    <GraduationCap size={28} className="text-white" />
+                    <h3 className="text-2xl font-bold text-white">
+                      {t('education.title')}
+                    </h3>
+                  </div>
+                  <p className="text-lg font-bold text-white mb-2">
+                    {t('education.degree')}
                   </p>
-                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                    {t.raw('education.courses').map((course: string, index: number) => (
-                      <li key={index} className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
-                        <span className="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
-                        {course}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                  <p className="text-sm text-white/80 mb-2">
+                    {t('education.institution')}
+                  </p>
+                  <p className="text-sm text-white/80 mb-4 font-semibold">
+                    {t('education.period')}
+                  </p>
+                  
+                  {/* Relevant Courses */}
+                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 mt-4">
+                    <p className="text-sm font-bold text-white mb-3">
+                      {t('education.relevantCourses')}
+                    </p>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      {t.raw('education.courses').map((course: string, index: number) => (
+                        <motion.li
+                          key={index}
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: 0.6 + index * 0.1 }}
+                          className="flex items-center gap-2 text-sm text-white"
+                        >
+                          <span className="w-2 h-2 rounded-full bg-white"></span>
+                          {course}
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </div>
+                </motion.div>
               </div>
             </motion.div>
 

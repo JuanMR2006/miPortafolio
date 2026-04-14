@@ -91,5 +91,21 @@
       "Diseño de software"
     ]
   }
+  },
+  "contact": {
+  "title": "Contáctame",
+  "subtitle": "Cuéntame sobre tu proyecto o idea",
+  "form": {
+    "name": "Nombre",
+    "namePlaceholder": "Tu nombre completo",
+    "email": "Email",
+    "emailPlaceholder": "tu@email.com",
+    "message": "Razón / Mensaje",
+    "messagePlaceholder": "Cuéntame en qué puedo ayudarte...",
+    "send": "Enviar Mensaje",
+    "sending": "Enviando...",
+    "success": "¡Mensaje enviado con éxito!",
+    "error": "Error al enviar. Intenta de nuevo."
+  }
   }
 }

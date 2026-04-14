@@ -69,12 +69,7 @@ export default function Testimonials() {
               
               {/* Quote Icon */}
               <div className="text-6xl text-white/30 mb-4">"</div>
-              
-              {/* Testimonial Text - Placeholder */}
-              <p className="text-lg sm:text-xl text-white leading-relaxed mb-8">
-                Testimonial 2 text will go here
-              </p>
-
+    
               {/* Testimonial Text */}
               <p className="text-lg sm:text-xl text-white leading-relaxed mb-8">
                 {t('testimonial2.text')}

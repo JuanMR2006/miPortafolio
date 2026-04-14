@@ -52,5 +52,8 @@
     "title": "Mercado Libre Clone",
     "description": "Replica of the Mercado Libre interface developed as a team applying GitFlow as work methodology. The project consisted of faithfully replicating the design and basic functionalities of the site using vanilla HTML, CSS and JavaScript."
   }
-  }
+  },
+  "testimonials": {
+  "title": "Testimonials"
+  } 
 }

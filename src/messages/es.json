@@ -52,5 +52,8 @@
     "title": "Clon de Mercado Libre",
     "description": "Réplica de la interfaz de Mercado Libre desarrollada en equipo aplicando GitFlow como metodología de trabajo. El proyecto consistió en replicar fielmente el diseño y funcionalidades básicas del sitio utilizando HTML, CSS y JavaScript vanilla."
   }
+  },
+  "testimonials": {
+  "title": "Testimonios"
   }
 }

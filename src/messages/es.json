@@ -108,6 +108,18 @@
     }
   },
   "footer": {
-    "rights": "Todos los derechos reservados"
+  "brand": "Juan José Montezuma",
+  "quote": "Backend Developer apasionado por crear soluciones eficientes y escalables.",
+  "menu": "Menú",
+  "home": "Inicio",
+  "about": "Sobre mí",
+  "projects": "Proyectos",
+  "testimonials": "Testimonios",
+  "experience": "Experiencia",
+  "contact": "Contacto",
+  "follow": "Sígueme",
+  "madeWith": "Hecho con",
+  "using": "usando:",
+  "rights": "Todos los derechos reservados"
   }
 }

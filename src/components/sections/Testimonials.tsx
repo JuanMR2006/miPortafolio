@@ -24,7 +24,7 @@ export default function Testimonials() {
         </motion.div>
 
         {/* Testimonials Container */}
-        <div className="relative max-w-5xl mx-auto">
+        <div className="relative max-w-5xl mx-auto space-y-8">
           
           {/* Testimonial Card 1 */}
           <motion.div
@@ -39,18 +39,49 @@ export default function Testimonials() {
               {/* Quote Icon */}
               <div className="text-6xl text-white/30 mb-4">"</div>
               
-              {/* Testimonial Text - Placeholder por ahora */}
+              {/* Testimonial Text */}
               <p className="text-lg sm:text-xl text-white leading-relaxed mb-8">
-                Testimonial text will go here
+                {t('testimonial1.text')}
+              </p>
+
+              {/* Author Info */}
+              <div className="flex flex-col items-center">
+                <p className="text-lg font-bold text-white mb-1">
+                  {t('testimonial1.author')}
+                </p>
+                <p className="text-sm text-white/80">
+                  {t('testimonial1.position')}
+                </p>
+              </div>
+
+            </div>
+          </motion.div>
+
+          {/* Testimonial Card 2 */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="bg-gradient-to-br from-purple-600 to-pink-600 rounded-3xl p-8 lg:p-12 shadow-2xl"
+          >
+            <div className="flex flex-col items-center text-center">
+              
+              {/* Quote Icon */}
+              <div className="text-6xl text-white/30 mb-4">"</div>
+              
+              {/* Testimonial Text - Placeholder */}
+              <p className="text-lg sm:text-xl text-white leading-relaxed mb-8">
+                Testimonial 2 text will go here
               </p>
 
               {/* Author Info - Placeholder */}
               <div className="flex flex-col items-center">
                 <p className="text-lg font-bold text-white mb-1">
-                  Author Name
+                  Author Name 2
                 </p>
                 <p className="text-sm text-white/80">
-                  Position
+                  Position 2
                 </p>
               </div>
 

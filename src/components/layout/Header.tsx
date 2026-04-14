@@ -26,6 +26,7 @@ export default function Header() {
     { href: '#inicio', label: t('home') },
     { href: '#sobre-mi', label: t('about') },
     { href: '#proyectos', label: t('projects') },
+    { href: '#testimonios', label: t('testimonials') },
     { href: '#experiencia', label: t('experience') },
     { href: '#contacto', label: t('contact') },
   ];

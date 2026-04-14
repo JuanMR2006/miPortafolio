@@ -65,32 +65,16 @@
     "text": "Working with Juan was an excellent experience, he is organized and always brings good ideas to the team.",
     "author": "Juan Sebastián Castaño",
     "position": "Student"
-  }
   },
   "testimonial3": {
     "text": "He stands out for his responsibility and ability to solve problems efficiently.",
     "author": "Laura Angélica Rosero",
     "position": "Family"
   },
-  "experience": {
-  "title": "Experience & Education",
-  "experience": {
-    "title": "Experience",
-    "period": "Currently",
-    "description": "I am currently looking for my first professional experience where I can apply my backend development knowledge and continue learning in a real environment."
-  },
-  "education": {
-    "title": "Education",
-    "degree": "Software Engineering",
-    "institution": "Universidad Cooperativa de Colombia",
-    "period": "2024 - Present",
-    "relevantCourses": "Relevant courses:",
-    "courses": [
-      "Programming",
-      "Data structures",
-      "Databases",
-      "Software design"
-    ]
+  "testimonial4": {
+    "text": "He is a very focused and dedicated person in everything he does. His attention to detail and commitment to quality are admirable.",
+    "author": "Oscar Montezuma",
+    "position": "Family"
   }
   },
   "contact": {

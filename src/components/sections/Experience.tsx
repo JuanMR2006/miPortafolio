@@ -41,13 +41,25 @@ export default function Experience() {
               transition={{ duration: 0.7, type: "spring" }}
               className="relative flex items-center"
             >
-              <div className="w-full md:w-1/2 md:pr-12">
-                {/* Content Card */}
+              <div className="w-full md:w-1/2 md:pr-8">
+                {/* Content Card with Icon */}
                 <motion.div
                   whileHover={{ scale: 1.05, y: -5 }}
                   transition={{ type: "spring", stiffness: 300 }}
-                  className="bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl p-6 shadow-2xl hover:shadow-blue-500/50 transition-all"
+                  className="relative bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl p-6 shadow-2xl hover:shadow-blue-500/50 transition-all"
                 >
+                  {/* Icon attached to card - better centered */}
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                    whileHover={{ scale: 1.2, rotate: 360 }}
+                    className="absolute -right-8 top-6 w-16 h-16 rounded-full bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center shadow-xl z-10 border-4 border-white dark:border-gray-900"
+                  >
+                    <Briefcase size={28} className="text-white" />
+                  </motion.div>
+
                   <div className="flex items-center gap-3 mb-3">
                     <Briefcase size={28} className="text-white" />
                     <h3 className="text-2xl font-bold text-white">
@@ -62,18 +74,6 @@ export default function Experience() {
                   </p>
                 </motion.div>
               </div>
-
-              {/* Icon Circle - Centered */}
-              <motion.div
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                whileHover={{ scale: 1.2, rotate: 360 }}
-                className="absolute left-1/2 -translate-x-1/2 w-16 h-16 rounded-full bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center shadow-xl z-10 border-4 border-white dark:border-gray-900"
-              >
-                <Briefcase size={28} className="text-white" />
-              </motion.div>
 
               {/* Empty space for right side on desktop */}
               <div className="hidden md:block w-1/2"></div>
@@ -90,25 +90,25 @@ export default function Experience() {
               {/* Empty space for left side on desktop */}
               <div className="hidden md:block w-1/2"></div>
 
-              {/* Icon Circle - Centered */}
-              <motion.div
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.5 }}
-                whileHover={{ scale: 1.2, rotate: -360 }}
-                className="absolute left-1/2 -translate-x-1/2 w-16 h-16 rounded-full bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center shadow-xl z-10 border-4 border-white dark:border-gray-900"
-              >
-                <GraduationCap size={28} className="text-white" />
-              </motion.div>
-
-              <div className="w-full md:w-1/2 md:pl-12">
-                {/* Content Card */}
+              <div className="w-full md:w-1/2 md:pl-8">
+                {/* Content Card with Icon */}
                 <motion.div
                   whileHover={{ scale: 1.05, y: -5 }}
                   transition={{ type: "spring", stiffness: 300 }}
-                  className="bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl p-6 shadow-2xl hover:shadow-purple-500/50 transition-all"
+                  className="relative bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl p-6 shadow-2xl hover:shadow-purple-500/50 transition-all"
                 >
+                  {/* Icon attached to card - better centered */}
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.5 }}
+                    whileHover={{ scale: 1.2, rotate: -360 }}
+                    className="absolute -left-8 top-6 w-16 h-16 rounded-full bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center shadow-xl z-10 border-4 border-white dark:border-gray-900"
+                  >
+                    <GraduationCap size={28} className="text-white" />
+                  </motion.div>
+
                   <div className="flex items-center gap-3 mb-3">
                     <GraduationCap size={28} className="text-white" />
                     <h3 className="text-2xl font-bold text-white">
@@ -121,31 +121,9 @@ export default function Experience() {
                   <p className="text-sm text-white/80 mb-2">
                     {t('education.institution')}
                   </p>
-                  <p className="text-sm text-white/80 mb-4 font-semibold">
+                  <p className="text-sm text-white/80 font-semibold">
                     {t('education.period')}
                   </p>
-                  
-                  {/* Relevant Courses */}
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 mt-4">
-                    <p className="text-sm font-bold text-white mb-3">
-                      {t('education.relevantCourses')}
-                    </p>
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                      {t.raw('education.courses').map((course: string, index: number) => (
-                        <motion.li
-                          key={index}
-                          initial={{ opacity: 0, x: -20 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          viewport={{ once: true }}
-                          transition={{ delay: 0.6 + index * 0.1 }}
-                          className="flex items-center gap-2 text-sm text-white"
-                        >
-                          <span className="w-2 h-2 rounded-full bg-white"></span>
-                          {course}
-                        </motion.li>
-                      ))}
-                    </ul>
-                  </div>
                 </motion.div>
               </div>
             </motion.div>

@@ -1,10 +1,11 @@
 {
   "nav": {
-    "home": "Inicio",
-    "about": "Sobre mí",
-    "projects": "Proyectos",
-    "experience": "Experiencia",
-    "contact": "Contacto"
+  "home": "Inicio",
+  "about": "Sobre mí",
+  "projects": "Proyectos",
+  "testimonials": "Testimonios",
+  "experience": "Experiencia",
+  "contact": "Contacto"
   },
   "hero": {
     "greeting": "Hola, soy",

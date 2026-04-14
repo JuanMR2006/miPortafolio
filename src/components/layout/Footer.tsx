@@ -143,8 +143,6 @@ export default function Footer() {
           className="text-white/80 text-sm flex flex-wrap items-center gap-2 justify-center mb-8"
         >
           <span>{t('madeWith')}</span>
-          <Heart size={16} className="text-red-400 fill-red-400" />
-          <span>{t('using')}</span>
           {technologies.map(({ name, Icon }) => (
             <div key={name} className="flex items-center gap-1">
               <Icon size={16} />

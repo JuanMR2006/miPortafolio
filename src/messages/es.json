@@ -64,6 +64,11 @@
     "text": "Trabajar con Juan fue una excelente experiencia, es organizado y siempre aporta buenas ideas en equipo.",
     "author": "Juan Sebastián Castaño",
     "position": "Estudiante"
+  },
+  "testimonial3": {
+    "text": "Destaca por su responsabilidad y capacidad para resolver problemas de forma eficiente.",
+    "author": "Laura Angélica Rosero",
+    "position": "Docente"
   }
   }
 }

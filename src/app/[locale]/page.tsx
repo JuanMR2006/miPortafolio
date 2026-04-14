@@ -5,17 +5,21 @@ import Projects from '@/components/sections/Projects';
 import Testimonials from '@/components/sections/Testimonials';
 import Experience from '@/components/sections/Experience';
 import Contact from '@/components/sections/Contact';
+import Footer from '@/components/layout/Footer';
 
 export default function Home() {
   return (
-    <main className="bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Testimonials />
-      <Experience />
-      <Contact />
-    </main>
+    <>
+      <main className="bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Testimonials />
+        <Experience />
+        <Contact />
+      </main>
+      <Footer />
+    </>
   );
 }

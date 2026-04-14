@@ -32,8 +32,15 @@ export default function Testimonials() {
       positionKey: 'testimonial3.position',
       gradient: 'from-emerald-600 to-teal-600',
     },
+    {
+      id: 4,
+      textKey: 'testimonial4.text',
+      authorKey: 'testimonial4.author',
+      positionKey: 'testimonial4.position',
+      gradient: 'from-orange-600 to-red-600',
+    },
   ];
-
+  
   // Auto-rotate every 4 seconds
   useEffect(() => {
     const interval = setInterval(() => {

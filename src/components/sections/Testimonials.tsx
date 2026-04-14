@@ -1,10 +1,60 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function Testimonials() {
   const t = useTranslations('testimonials');
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const testimonials = [
+    {
+      id: 1,
+      textKey: 'testimonial1.text',
+      authorKey: 'testimonial1.author',
+      positionKey: 'testimonial1.position',
+      gradient: 'from-blue-600 to-indigo-600',
+    },
+    {
+      id: 2,
+      textKey: 'testimonial2.text',
+      authorKey: 'testimonial2.author',
+      positionKey: 'testimonial2.position',
+      gradient: 'from-purple-600 to-pink-600',
+    },
+    {
+      id: 3,
+      textKey: 'testimonial3.text',
+      authorKey: 'testimonial3.author',
+      positionKey: 'testimonial3.position',
+      gradient: 'from-emerald-600 to-teal-600',
+    },
+  ];
+
+  // Auto-rotate every 4 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [testimonials.length]);
+
+  const nextTestimonial = () => {
+    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const prevTestimonial = () => {
+    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+
+  // Get current and next testimonial (showing 2 at once)
+  const visibleTestimonials = [
+    testimonials[currentIndex],
+    testimonials[(currentIndex + 1) % testimonials.length],
+  ];
 
   return (
     <section id="testimonios" className="px-4 sm:px-6 lg:px-8 py-24 bg-white dark:bg-gray-900">
@@ -23,92 +73,76 @@ export default function Testimonials() {
           </h2>
         </motion.div>
 
-        {/* Testimonials Container */}
-        <div className="relative max-w-5xl mx-auto space-y-8">
+        {/* Testimonials Carousel */}
+        <div className="relative max-w-6xl mx-auto">
           
-          {/* Testimonial Card 1 */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="bg-gradient-to-br from-blue-600 to-indigo-600 rounded-3xl p-8 lg:p-12 shadow-2xl"
+          {/* Navigation Buttons */}
+          <button
+            onClick={prevTestimonial}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-12 z-10 p-3 bg-white dark:bg-gray-800 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110"
+            aria-label="Previous testimonial"
           >
-            <div className="flex flex-col items-center text-center">
-              
-              <div className="text-6xl text-white/30 mb-4">"</div>
-              
-              <p className="text-lg sm:text-xl text-white leading-relaxed mb-8">
-                {t('testimonial1.text')}
-              </p>
+            <ChevronLeft size={24} className="text-blue-600 dark:text-blue-400" />
+          </button>
 
-              <div className="flex flex-col items-center">
-                <p className="text-lg font-bold text-white mb-1">
-                  {t('testimonial1.author')}
-                </p>
-                <p className="text-sm text-white/80">
-                  {t('testimonial1.position')}
-                </p>
-              </div>
-
-            </div>
-          </motion.div>
-
-          {/* Testimonial Card 2 */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-gradient-to-br from-purple-600 to-pink-600 rounded-3xl p-8 lg:p-12 shadow-2xl"
+          <button
+            onClick={nextTestimonial}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-12 z-10 p-3 bg-white dark:bg-gray-800 rounded-full shadow-lg hover:shadow-xl transition-all hover:scale-110"
+            aria-label="Next testimonial"
           >
-            <div className="flex flex-col items-center text-center">
-              
-              <div className="text-6xl text-white/30 mb-4">"</div>
-              
-              <p className="text-lg sm:text-xl text-white leading-relaxed mb-8">
-                {t('testimonial2.text')}
-              </p>
+            <ChevronRight size={24} className="text-blue-600 dark:text-blue-400" />
+          </button>
 
-              <div className="flex flex-col items-center">
-                <p className="text-lg font-bold text-white mb-1">
-                  {t('testimonial2.author')}
-                </p>
-                <p className="text-sm text-white/80">
-                  {t('testimonial2.position')}
-                </p>
-              </div>
+          {/* Testimonials Grid - 2 cards */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <AnimatePresence mode="wait">
+              {visibleTestimonials.map((testimonial, idx) => (
+                <motion.div
+                  key={`${testimonial.id}-${currentIndex}`}
+                  initial={{ opacity: 0, x: idx === 0 ? -50 : 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: idx === 0 ? -50 : 50 }}
+                  transition={{ duration: 0.5 }}
+                  className={`bg-gradient-to-br ${testimonial.gradient} rounded-3xl p-8 shadow-2xl`}
+                >
+                  <div className="flex flex-col items-center text-center h-full justify-between">
+                    
+                    <div className="text-6xl text-white/30 mb-4">"</div>
+                    
+                    <p className="text-base sm:text-lg text-white leading-relaxed mb-6 flex-1">
+                      {t(testimonial.textKey)}
+                    </p>
 
-            </div>
-          </motion.div>
+                    <div className="flex flex-col items-center">
+                      <p className="text-lg font-bold text-white mb-1">
+                        {t(testimonial.authorKey)}
+                      </p>
+                      <p className="text-sm text-white/80">
+                        {t(testimonial.positionKey)}
+                      </p>
+                    </div>
 
-          {/* Testimonial Card 3 */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="bg-gradient-to-br from-emerald-600 to-teal-600 rounded-3xl p-8 lg:p-12 shadow-2xl"
-          >
-            <div className="flex flex-col items-center text-center">
-              
-              <div className="text-6xl text-white/30 mb-4">"</div>
-              
-              <p className="text-lg sm:text-xl text-white leading-relaxed mb-8">
-                {t('testimonial3.text')}
-              </p>
+                  </div>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </div>
 
-              <div className="flex flex-col items-center">
-                <p className="text-lg font-bold text-white mb-1">
-                  {t('testimonial3.author')}
-                </p>
-                <p className="text-sm text-white/80">
-                  {t('testimonial3.position')}
-                </p>
-              </div>
-
-            </div>
-          </motion.div>
+          {/* Dots Indicator */}
+          <div className="flex justify-center gap-2 mt-8">
+            {testimonials.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentIndex(idx)}
+                className={`w-3 h-3 rounded-full transition-all ${
+                  idx === currentIndex
+                    ? 'bg-blue-600 dark:bg-blue-400 w-8'
+                    : 'bg-gray-300 dark:bg-gray-600'
+                }`}
+                aria-label={`Go to testimonial ${idx + 1}`}
+              />
+            ))}
+          </div>
 
         </div>
 

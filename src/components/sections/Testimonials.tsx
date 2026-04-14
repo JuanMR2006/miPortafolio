@@ -54,12 +54,6 @@ export default function Testimonials() {
     setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
-  // Get current and next testimonial (showing 2 at once)
-  const visibleTestimonials = [
-    testimonials[currentIndex],
-    testimonials[(currentIndex + 1) % testimonials.length],
-  ];
-
   const slideVariants = {
     enter: (direction: number) => ({
       x: direction > 0 ? '100%' : '-100%',
@@ -112,8 +106,8 @@ export default function Testimonials() {
             <ChevronRight size={24} className="text-blue-600 dark:text-blue-400" />
           </button>
 
-          {/* Testimonials Container with fixed height */}
-          <div className="relative overflow-hidden min-h-[400px] flex items-center">
+          {/* Testimonials Container */}
+          <div className="relative overflow-hidden min-h-[350px] lg:min-h-[300px] flex items-center">
             <AnimatePresence initial={false} mode="wait" custom={direction}>
               <motion.div
                 key={currentIndex}
@@ -126,33 +120,60 @@ export default function Testimonials() {
                   x: { type: "tween", duration: 0.5, ease: "easeInOut" },
                   opacity: { duration: 0.3 },
                 }}
-                className="w-full grid grid-cols-1 lg:grid-cols-2 gap-6 absolute inset-0"
+                className="w-full absolute inset-0"
               >
-                {visibleTestimonials.map((testimonial) => (
+                {/* Mobile: Show 1 card, Desktop: Show 2 cards */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 h-full">
+                  
+                  {/* First Card - Always visible */}
                   <div
-                    key={testimonial.id}
-                    className={`bg-gradient-to-br ${testimonial.gradient} rounded-3xl p-8 shadow-2xl flex items-center justify-center`}
+                    className={`bg-gradient-to-br ${testimonials[currentIndex].gradient} rounded-3xl p-8 shadow-2xl flex items-center justify-center`}
                   >
                     <div className="flex flex-col items-center text-center justify-between h-full">
                       
                       <div className="text-6xl text-white/30 mb-4">"</div>
                       
                       <p className="text-base sm:text-lg text-white leading-relaxed mb-6 flex-1 flex items-center">
-                        {t(testimonial.textKey)}
+                        {t(testimonials[currentIndex].textKey)}
                       </p>
 
                       <div className="flex flex-col items-center">
                         <p className="text-lg font-bold text-white mb-1">
-                          {t(testimonial.authorKey)}
+                          {t(testimonials[currentIndex].authorKey)}
                         </p>
                         <p className="text-sm text-white/80">
-                          {t(testimonial.positionKey)}
+                          {t(testimonials[currentIndex].positionKey)}
                         </p>
                       </div>
 
                     </div>
                   </div>
-                ))}
+
+                  {/* Second Card - Only visible on desktop */}
+                  <div
+                    className={`hidden lg:block bg-gradient-to-br ${testimonials[(currentIndex + 1) % testimonials.length].gradient} rounded-3xl p-8 shadow-2xl`}
+                  >
+                    <div className="flex flex-col items-center text-center justify-between h-full">
+                      
+                      <div className="text-6xl text-white/30 mb-4">"</div>
+                      
+                      <p className="text-base sm:text-lg text-white leading-relaxed mb-6 flex-1 flex items-center">
+                        {t(testimonials[(currentIndex + 1) % testimonials.length].textKey)}
+                      </p>
+
+                      <div className="flex flex-col items-center">
+                        <p className="text-lg font-bold text-white mb-1">
+                          {t(testimonials[(currentIndex + 1) % testimonials.length].authorKey)}
+                        </p>
+                        <p className="text-sm text-white/80">
+                          {t(testimonials[(currentIndex + 1) % testimonials.length].positionKey)}
+                        </p>
+                      </div>
+
+                    </div>
+                  </div>
+
+                </div>
               </motion.div>
             </AnimatePresence>
           </div>

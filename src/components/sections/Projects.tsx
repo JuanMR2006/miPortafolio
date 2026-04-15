@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
-import { Code, ChevronDown, ChevronUp } from 'lucide-react';
+import { Code, ChevronDown, ChevronUp, Download } from 'lucide-react';
 import { useState } from 'react';
 
 export default function Projects() {

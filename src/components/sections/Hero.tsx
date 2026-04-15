@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
-import { Download, Code, Mail } from 'lucide-react';
+import { Code, Mail, Download } from 'lucide-react';
 import Image from 'next/image';
 
 export default function Hero() {
@@ -114,51 +114,18 @@ export default function Hero() {
               {t('description')}
             </motion.p>
 
-            {/* Button */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              className="flex justify-center lg:justify-start mb-6"
+            {/* Download CV Button */}
+            <motion.a
+              href="/CV_Juan_Montezuma.pdf"
+              download="CV_Juan_Jose_Montezuma.pdf"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-full font-semibold shadow-lg hover:shadow-xl transition-all flex items-center gap-2"
             >
-              <motion.button
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold rounded-xl shadow-lg hover:shadow-2xl transition-all flex items-center gap-2"
-              >
-                <Download size={20} />
-                {t('downloadCV')}
-              </motion.button>
-            </motion.div>
+              <Download size={20} />
+              {t('downloadCV')}
+            </motion.a>
 
-            {/* Social Links */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.9 }}
-              className="flex gap-4 justify-center lg:justify-start"
-            >
-              <motion.a
-                href="https://github.com/JuanMR2006"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.15, rotate: 5 }}
-                whileTap={{ scale: 0.9 }}
-                className="p-4 bg-gray-200 dark:bg-gray-800 hover:bg-blue-600 dark:hover:bg-blue-600 text-gray-800 dark:text-gray-200 hover:text-white rounded-xl shadow-lg hover:shadow-xl transition-all"
-                aria-label="GitHub"
-              >
-                <Code size={24} />
-              </motion.a>
-              <motion.a
-                href="mailto:juanjomontezuma@gmail.com"
-                whileHover={{ scale: 1.15, rotate: -5 }}
-                whileTap={{ scale: 0.9 }}
-                className="p-4 bg-gray-200 dark:bg-gray-800 hover:bg-blue-600 dark:hover:bg-blue-600 text-gray-800 dark:text-gray-200 hover:text-white rounded-xl shadow-lg hover:shadow-xl transition-all"
-                aria-label="Email"
-              >
-                <Mail size={24} />
-              </motion.a>
-            </motion.div>
 
           </div>
 

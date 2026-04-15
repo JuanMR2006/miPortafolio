@@ -49,7 +49,7 @@ export default function Projects() {
   ];
 
   return (
-    <section id="proyectos" className="px-4 sm:px-6 lg:px-8 py-24 bg-gradient-to-b from-white to-gray-100 dark:from-gray-900 dark:to-gray-800">
+    <section id="proyectos" className="px-4 sm:px-6 lg:px-8 py-24 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto w-full">
         
         {/* Section Title */}

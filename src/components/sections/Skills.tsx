@@ -34,7 +34,7 @@ export default function Skills() {
   ];
 
   return (
-    <section id="habilidades" className="px-4 sm:px-6 lg:px-8 py-20 bg-white dark:bg-gray-900">
+    <section id="habilidades" className="px-4 sm:px-6 lg:px-8 py-24 bg-gradient-to-b from-white to-gray-100 dark:from-gray-900 dark:to-gray-800">
       <div className="max-w-7xl mx-auto w-full">
         
         {/* Section Title */}

@@ -9,7 +9,7 @@ export default function Hero() {
   const t = useTranslations('hero');
 
   return (
-    <section id="inicio" className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-32 md:pt-40 pb-20">
+    <section id="inicio" className="px-4 sm:px-6 lg:px-8 pt-32 md:pt-40 pb-20 min-h-screen flex items-center">
       <div className="max-w-7xl mx-auto w-full">
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">

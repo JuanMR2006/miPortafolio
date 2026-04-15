@@ -1,26 +1,22 @@
 'use client';
 
-import Link from 'next/link';
+import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
-import { usePathname, useRouter } from 'next/navigation';
-import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { Menu, X, Moon, Sun } from 'lucide-react';
+import { useTheme } from '@/hooks/useTheme';
 
 export default function Header() {
   const t = useTranslations('nav');
   const pathname = usePathname();
-  const router = useRouter();
-  const currentLocale = pathname.split('/')[1];
-  const [locale, setLocale] = useState(currentLocale || 'es');
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
-  const switchLanguage = (newLocale: string) => {
-    setLocale(newLocale);
-    const newPath = pathname.replace(`/${currentLocale}`, `/${newLocale}`);
-    router.push(newPath);
-    setMobileMenuOpen(false);
-  };
+  const currentLocale = pathname.split('/')[1] || 'es';
+  const otherLocale = currentLocale === 'es' ? 'en' : 'es';
 
   const navItems = [
     { href: '#inicio', label: t('home') },
@@ -31,160 +27,155 @@ export default function Header() {
     { href: '#contacto', label: t('contact') },
   ];
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleNavClick = (href: string) => {
+    setIsMenuOpen(false);
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <>
-      {/* Desktop Header */}
-      <motion.header
-        initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
-        className="fixed top-4 left-0 right-0 z-50 px-4 hidden lg:block"
-      >
-        <nav className="max-w-7xl mx-auto bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl shadow-2xl rounded-full border border-gray-200 dark:border-gray-700 px-6 py-4">
-          <div className="flex items-center justify-between">
-            {/* Logo/Nombre */}
-            <Link 
-              href="#inicio" 
-              className="text-base md:text-lg lg:text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent hover:scale-105 transition-transform whitespace-nowrap"
+    <motion.header
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5 }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-lg'
+          : 'bg-transparent'
+      }`}
+    >
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-20">
+          
+          {/* Logo */}
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            className="flex-shrink-0"
+          >
+            <Link
+              href={`/${currentLocale}`}
+              className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"
             >
               Juan José Montezuma
             </Link>
+          </motion.div>
 
-            {/* Desktop Menu + Language Switcher */}
-            <div className="flex items-center gap-6 xl:gap-8">
-              <ul className="flex gap-6 xl:gap-8">
-                {navItems.map((item, index) => (
-                  <motion.li
-                    key={item.href}
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.1 * index, duration: 0.4 }}
-                  >
-                    <Link 
-                      href={item.href} 
-                      className="text-sm lg:text-base text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium whitespace-nowrap"
-                    >
-                      {item.label}
-                    </Link>
-                  </motion.li>
-                ))}
-              </ul>
-
-              {/* Language Switcher Desktop */}
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.5, duration: 0.4 }}
-                className="flex gap-1 bg-gray-100 dark:bg-gray-800 rounded-full p-1"
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-1">
+            {navItems.map((item) => (
+              <motion.button
+                key={item.href}
+                onClick={() => handleNavClick(item.href)}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium"
               >
-                <button
-                  onClick={() => switchLanguage('es')}
-                  className={`px-4 py-2 rounded-full font-bold text-sm transition-all ${
-                    locale === 'es'
-                      ? 'bg-blue-600 text-white shadow-lg'
-                      : 'text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
-                  }`}
-                >
-                  ES
-                </button>
-                <button
-                  onClick={() => switchLanguage('en')}
-                  className={`px-4 py-2 rounded-full font-bold text-sm transition-all ${
-                    locale === 'en'
-                      ? 'bg-blue-600 text-white shadow-lg'
-                      : 'text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
-                  }`}
-                >
-                  EN
-                </button>
-              </motion.div>
-            </div>
-          </div>
-        </nav>
-      </motion.header>
+                {item.label}
+              </motion.button>
+            ))}
 
-      {/* Mobile Header */}
-      <motion.header
-        initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
-        className="fixed top-0 left-0 right-0 z-50 lg:hidden"
-      >
-        <nav className="bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl shadow-lg border-b border-gray-200 dark:border-gray-700">
-          <div className="px-4 py-4 flex items-center justify-between">
-            {/* Logo/Nombre */}
-            <Link 
-              href="#inicio" 
-              className="text-lg font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent"
-              onClick={() => setMobileMenuOpen(false)}
+            {/* Theme Toggle - Desktop */}
+            <motion.button
+              onClick={toggleTheme}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="ml-2 p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all"
+              aria-label="Toggle theme"
             >
-              Juan José Montezuma
+              {theme === 'dark' ? (
+                <Sun size={20} className="text-yellow-400" />
+              ) : (
+                <Moon size={20} className="text-blue-600" />
+              )}
+            </motion.button>
+
+            {/* Language Switcher - Desktop */}
+            <Link
+              href={`/${otherLocale}`}
+              className="ml-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+            >
+              {otherLocale.toUpperCase()}
             </Link>
+          </div>
 
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
+          {/* Mobile Menu Button */}
+          <div className="md:hidden flex items-center gap-2">
+            
+            {/* Theme Toggle - Mobile (outside hamburger) */}
+            <motion.button
+              onClick={toggleTheme}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all"
+              aria-label="Toggle theme"
             >
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {theme === 'dark' ? (
+                <Sun size={20} className="text-yellow-400" />
+              ) : (
+                <Moon size={20} className="text-blue-600" />
+              )}
+            </motion.button>
+
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? (
+                <X size={24} className="text-gray-700 dark:text-gray-300" />
+              ) : (
+                <Menu size={24} className="text-gray-700 dark:text-gray-300" />
+              )}
             </button>
           </div>
 
-          {/* Mobile Menu Dropdown */}
-          <AnimatePresence>
-            {mobileMenuOpen && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                transition={{ duration: 0.3 }}
-                className="overflow-hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700"
-              >
-                {/* Menu items */}
-                <ul className="py-2">
-                  {navItems.map((item) => (
-                    <li key={item.href}>
-                      <Link
-                        href={item.href}
-                        onClick={() => setMobileMenuOpen(false)}
-                        className="block px-6 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-blue-600 dark:hover:text-blue-400 transition-all font-medium"
-                      >
-                        {item.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+        </div>
 
-                {/* Language Switcher */}
-                <div className="px-6 py-4 border-t border-gray-200 dark:border-gray-700">
-                  <div className="flex gap-3">
-                    <button
-                      onClick={() => switchLanguage('es')}
-                      className={`flex-1 px-4 py-3 rounded-lg font-bold text-sm transition-all ${
-                        locale === 'es'
-                          ? 'bg-blue-600 text-white shadow-md'
-                          : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
-                      }`}
-                    >
-                      ES
-                    </button>
-                    <button
-                      onClick={() => switchLanguage('en')}
-                      className={`flex-1 px-4 py-3 rounded-lg font-bold text-sm transition-all ${
-                        locale === 'en'
-                          ? 'bg-blue-600 text-white shadow-md'
-                          : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
-                      }`}
-                    >
-                      EN
-                    </button>
-                  </div>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </nav>
-      </motion.header>
-    </>
+        {/* Mobile Menu */}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3 }}
+              className="md:hidden overflow-hidden bg-white dark:bg-gray-900 rounded-b-2xl shadow-xl"
+            >
+              <div className="px-4 py-6 space-y-3">
+                {navItems.map((item) => (
+                  <motion.button
+                    key={item.href}
+                    onClick={() => handleNavClick(item.href)}
+                    whileHover={{ x: 10 }}
+                    className="block w-full text-left px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-800 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg transition-all font-medium"
+                  >
+                    {item.label}
+                  </motion.button>
+                ))}
+
+                {/* Language Switcher - Mobile */}
+                <Link
+                  href={`/${otherLocale}`}
+                  className="block w-full text-center px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold mt-4"
+                >
+                  {otherLocale.toUpperCase()}
+                </Link>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+      </nav>
+    </motion.header>
   );
 }
